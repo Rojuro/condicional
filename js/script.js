@@ -31,50 +31,59 @@ function mediaAritMetica() {
     } 
 }
 // ---------Exercicio 2---------------------------------- -->
-function rendaMatric() {
-    // ENTRADA
-    let rend1 = Number(document.getElementById("rend1").value)
-    const salarioMinimo = 1412
-    const limite = salarioMinimo * 1.5
-    // PROCESSAMENTO  
+function verificarRenda() {
     
-    if (renda < limite) { 
-        // SAÍDA APROVADO        
-        document.getElementById("rendAminim").innerText
-        = "O renda no valor de " + renda + " Esta no critério Aprovado"
-    } else { 
-        // SAÍDA REPROVADO        
-        document.getElementById("rendAminim").innerText
-        = "O renda no valor de " + renda + " Esta no critério Reprovado"
-    } 
+    let rendaFamiliar = Number(document.getElementById("rendaFamiliar").value);
+    let numeroMembros = Number(document.getElementById("numeroMembros").value);
+
+    const criterio = 2118.00;
+    // Calcular a renda per capita
+    let rendaPerCapita = rendaFamiliar / numeroMembros;
+        
+    if (rendaPerCapita <= criterio) {
+        document.getElementById("resultadoren").innerText = "A renda per capita é R$" + rendaPerCapita + " Você pode se matricular."
+    } else {
+        document.getElementById("resultadoren").innerText = "A renda per capita é R$" + rendaPerCapita + " você possuir uma renda maior que o permitido para se matricular ."
+
+    }
 }
 // ---------Exercicio 3---------------------------------- -->
-function igualDiferent() {
-    // ENTRADA
-    let valorX = Number(document.getElementById("valorX").value)
-    let valorY = Number(document.getElementById("valorY").value)
-    let resultados
-    // PROCESSAMENTO  
-    
-    if (valorX == valorY) { 
-        // SAÍDA IGUAIS MULTIPLICAR
-        resultados = valorX1 * valorY1
-        
-        document.getElementById("calcular1").innerText
-        = "Os valores " + resultados + " são iguais portanto serão multiplicados"
+function calcularXY() {
 
+    let x = Number(document.getElementById("valorx").value);
+    let y = Number(document.getElementById("valorY").value);
+
+    // Verificar se x é igual a y
+    let resultadoXY;
+    if (x === y) {
+        resultadoXY = x * y;
+        document.getElementById("resultadoXY").innerText ="Como x e y são iguais, o resultado é x * y = " + resultadoXY + ""
     } else {
-        if (valorX != valorY)
-        // SAÍDA DIFERENTES DIVIDIR
-        resultados = valorX1 / valorY1
-
-        document.getElementById("calcular1").innerText
-        = "Os valores " + resultados + " são difirentes portanto serão divididos"
-    } 
+        if (y === 0) {
+            document.getElementById("resultadoXY").innerText = "Divisão por zero não é permitida.";
+        } else {
+            resultadoXY = x / y;
+            document.getElementById("resultadoXY").innerText ="Como x e y são diferentes, o resultado é x / y = " + resultadoXY + ""
+        }
+    }
 }
 // ---------Exercicio 4---------------------------------- -->
 
+function calcularPesoIdeal() {
 
+    let altura = Number(document.getElementById("altura").value);
+    let sexo = document.getElementById("sexo").value;
+
+    // Calcular o peso ideal com base no sexo
+    let pesoIdeal;
+    if (sexo === "masculino") {
+        pesoIdeal = (72.7 * altura) - 58;
+    } else if (sexo === "feminino") {
+        pesoIdeal = (62.1 * altura) - 44.7;
+    }
+
+    document.getElementById("resultadoideal").innerText = "O peso ideal é "+ pesoIdeal+ "kg"
+}
 
 
 

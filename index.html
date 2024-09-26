@@ -27,25 +27,43 @@
     </section>
 <!-- ---------Exercicio 2---------------------------------- -->
 
-    <section id="re"></section>
-        <h2>Matricula Curso Gratuíto</h2>
-        <p>Critério renda menor ou igual a 1,5 do salário mínino</p>
-        <input type="number" id="renda" placeholder="Digite sua renda R$">
+    <section id="rennda"></section>
+        <h2>Verificar renda para matrícula</h2>
 
-        <button type="button" onclick="verifica()">Calcular</button>
-        <p id="rendAminim"></p>
+        <input type="number" name="rendaFamiliar" id="rendaFamiliar" placeholder="Digite a renda familiar">
+        <input type="number" name="numeroMembros" id="numeroMembros" placeholder="Digite o número de membros">
+        <button type="submit" class="btn btn-secondary rounded-pill" onclick="verificarRenda()">Calcular</button>
+        <p id="resultadoren"></p>
     </section>
 <!-- ---------Exercicio 3---------------------------------- -->
 
     <section id="diferIgual">
-        <h2>Números X ou Y</h2>
-        <input type="number" name="valorX" id="valorX1" placeholder="Digite o valor de X">
-        <input type="number" name="valorY" id="valorY1" placeholder="Digite o valor de Y">
+        <h2>Calculadora de Multiplicação ou Divisão</h2>
+
+        <input type="number" name="valorx" id="valorx" placeholder="Digite o valor de X">
+
+        <input type="number" name="valorY" id="valorY" placeholder="Digite o valor de Y">
+
+        <button type="submit" class="btn btn-secondary rounded-pill" onclick="calcularXY()">Calcular</button>
         
-        <button onclick="igualDiferent()">Calcular</button>
-        <div id="calcular1"></div>
+        <p id="resultadoXY"></p>
     </section>
 <!-- ---------Exercicio 4---------------------------------- -->
+    <section>
+        <h2>Calculadora de IMC</h2>
+            <label for="nome">Digite sua altura</label><br>
+            <input type="number" name="altura" id="altura" step="0.01" placeholder="Digite sua altura">
+
+            <select id="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+
+            <button type="submit" class="btn btn-secondary rounded-pill" onclick="calcularPesoIdeal()">Calcular Peso Ideal</button>
+
+            <p id="resultadoideal"></p>
+    </section>
+
 
 </body>
 </html>
